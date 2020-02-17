@@ -1,0 +1,117 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'index.css'%}"  type="text/css">
+    <link rel="stylesheet" href="{% static 'jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.structure.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.theme.css' %}">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js" type="text/javacript"></script>-->
+    <script src="{% static 'jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js'%}"></script>
+    <script src="https://kit.fontawesome.com/0cd59be4ce.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="{% static 'style/home.js" type="text/javacript'%}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light  bg-light sticky-top">
+        <div class="container-fluid" id="topp">
+            <a class="navbar-brand" href="#"><img src="{% static 'img/w3newbie.png'%}" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="accounts/register.html"> Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    
+                
+                
+            </div>
+        </div>
+    </nav><br>
+<!--Registration from-->
+    <div class="container-fluid" style="margin-top:20px">
+        <div class="row padding">
+            <div class="col-12" >
+                <h3>Please Fill out this registration from</h3>
+                {% for message in messages %}
+                <h6 style="background-color: lightsalmon;color:red;padding:20px;width:50%">{{message}}</h6>
+                {% endfor %}
+            <br> <form action="register.html" method="POST" style="margin-left:20px;margin-right:0px;">
+                    {%csrf_token%}
+                    <input type="text" name="user_name" placeholder="Enter Username"><br><br>
+                    <input type="text" name="first_name" placeholder="Enter first name"><br><br>
+                    <input type="text" name="last_name" placeholder="Enter last name"><br><br>
+                    <input type="password" name="password1" placeholder="Enter password"><br><br>
+                    <input type="password" name="password2" placeholder="Confirm password"><br><br>
+                    <input type="email" name="email" placeholder="Enter Email"><br><br>
+                    
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div><br><br>
+    <!--footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'img/w3newbie.png'%}" class="img-fluid">
+                    <hr class="light">
+                    <a href="#">07069199170</a>
+                    <p>davidnjoagwuani@gmail.com</p>
+                    <p>plot 104 Haruk Road</p>
+                    <p>Port Harcourt, 500272</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Active Hours</h5>
+                    <hr class="light">
+                    <p>Monday:8am-8pm</p>
+                    <p>Saturday:11am-6pm</p>
+                    <p>Sunday:closed</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>States present</h5>
+                    <hr class="light">
+                    <p>Lagos</p>
+                    <p>F.C.T</p>
+                    <p>Rivers</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <div style="text-align:right"> <a href="#topp">back to top <i class="fas fa-angle-double-up"></i></a></div>
+                    <h5>&copy; i-wizard 2020</h5>
+                  
+                </div>>
+            </div>
+        </div>
+    </footer>    
+
+</body>
+</html>
